@@ -2,8 +2,6 @@ require 'json'
 require 'rest-client'
 
 class CmccHxy::HxyClient
-  HXY_HOST = "http://223.86.3.124:8081"
-
   def initialize(token)
     @token = token
   end
@@ -43,7 +41,7 @@ class CmccHxy::HxyClient
     params = {
       data: "{accesstoken: #{@token}}"
     }
-    request("#{HXY_HOST}/typtOauth/typt/chk_oauth", {params: params})
+    request("#{Config::HXY_HOST}/typtOauth/typt/chk_oauth", {params: params})
   end
 
   #     第三方应用调用此接口查询业务的开通情况.第三方应用只能查询到有关自己的业务开通情况。
@@ -74,7 +72,7 @@ class CmccHxy::HxyClient
     params = {
       data: "{accesstoken:#{@token}, userid:#{uid}}"
     }
-    request("#{HXY_HOST}/typtOauth/typt/qry_order", {params: params})
+    request("#{Config::HXY_HOST}/typtOauth/typt/qry_order", {params: params})
   end
 
   private
@@ -95,7 +93,5 @@ class CmccHxy::HxyClient
 
     result
   end
-
-  class HxyRequestError < StandardError; end
 end
 
