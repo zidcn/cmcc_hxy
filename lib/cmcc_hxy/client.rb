@@ -1,6 +1,7 @@
 require 'json'
 require 'rest-client'
 require 'cmcc_hxy/error'
+require 'cmcc_hxy/config'
 
 class CmccHxy::Client
   def initialize(token)
