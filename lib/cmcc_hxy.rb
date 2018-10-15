@@ -5,10 +5,7 @@ require "cmcc_hxy/version"
 module CmccHxy
   class << self
     attr_accessor :config
-
-    def configure
-      self.config ||= ::Config.new
-      yield(config)
-    end
   end
+
+  self.config ||= Config.new
 end

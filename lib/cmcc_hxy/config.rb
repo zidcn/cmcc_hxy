@@ -1,9 +1,9 @@
 module CmccHxy
   class Config
-    class << self
-      attr_accessor :hxy_host
-    end
+    attr_accessor :hxy_host
 
-    self.hxy_host = "http://223.86.3.124:8081"
+    def initialize
+      @hxy_host = "http://223.86.3.124:8081"
+    end
   end
 end
