@@ -1,6 +1,14 @@
+require "cmcc_hxy/client"
+require "cmcc_hxy/config"
 require "cmcc_hxy/version"
-require "cmcc_hxy/hxy_client"
 
 module CmccHxy
-end
+  class << self
+    attr_accessor :config
 
+    def configure
+      self.config ||= ::Config.new
+      yield(config)
+    end
+  end
+end
