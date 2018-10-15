@@ -7,6 +7,10 @@ class CmccHxy::Client
     @token = token
   end
 
+  def host
+    @host ||= CmccHxy::Config.hxy_host
+  end
+
   def get_users
     chk_oauth
   end
@@ -42,7 +46,7 @@ class CmccHxy::Client
     params = {
       data: "{accesstoken: #{@token}}"
     }
-    request("#{CmccHxy.config.hxy_host}/typtOauth/typt/chk_oauth", {params: params})
+    request("#{self.host}/typtOauth/typt/chk_oauth", {params: params})
   end
 
   #     第三方应用调用此接口查询业务的开通情况.第三方应用只能查询到有关自己的业务开通情况。
@@ -73,7 +77,7 @@ class CmccHxy::Client
     params = {
       data: "{accesstoken:#{@token}, userid:#{uid}}"
     }
-    request("#{CmccHxy.config.hxy_host}/typtOauth/typt/qry_order", {params: params})
+    request("#{self.host}/typtOauth/typt/qry_order", {params: params})
   end
 
   private
