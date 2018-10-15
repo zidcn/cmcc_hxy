@@ -6,12 +6,12 @@ require "cmcc_hxy/version"
 Gem::Specification.new do |spec|
   spec.name          = "cmcc_hxy"
   spec.version       = CmccHxy::VERSION
-  spec.authors       = ["lumuy"]
-  spec.email         = ["dxgnaw@gmail.com"]
+  spec.authors       = ["zidcn"]
+  spec.email         = ["zd@zidcn.com"]
 
   spec.summary       = %q{CMCC hxy.}
   spec.description   = %q{CMCC hexiaoyuan API.}
-  spec.homepage      = "https://github.com/Lumuy/cmcc_hxy.git"
+  spec.homepage      = "https://github.com/zidcn/cmcc_hxy.git"
   spec.license       = "MIT"
 
 
