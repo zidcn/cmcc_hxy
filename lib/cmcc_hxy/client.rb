@@ -1,6 +1,4 @@
-require 'json'
-require 'rest-client'
-require 'cmcc_hxy/error'
+require 'cmcc_hxy/rest_client'
 require 'cmcc_hxy/config'
 
 class CmccHxy::Client
@@ -84,19 +82,6 @@ class CmccHxy::Client
   private
 
   def request(url, params)
-    begin
-      response = RestClient.get(url, params)
-      result = JSON.parse(response)
-    rescue JSON::ParserError
-      raise CmccHxy::Error.new("移动和校园 JSON 解析出错")
-    rescue RestClient::ExceptionWithResponse => e
-      raise CmccHxy::Error.new("移动和校园请求出错 #{e.response.code}")
-    end
-
-    if response.code == 200 && result.is_a?(Hash) && result.key?('error_code')
-      raise CmccHxy::Error.new(result.fetch('error_msg'))
-    end
-
-    result
+    CmccHxy::RestClient.new(:get, url, params).request
   end
 end
