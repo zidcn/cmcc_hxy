@@ -6,8 +6,13 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    hashdiff (1.0.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     mime-types (3.2.2)
@@ -15,14 +20,20 @@ GEM
     mime-types-data (3.2018.0812)
     minitest (5.11.3)
     netrc (0.11.0)
+    public_suffix (4.0.5)
     rake (10.5.0)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    safe_yaml (1.0.5)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.5)
+    webmock (3.8.3)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
@@ -33,6 +44,7 @@ DEPENDENCIES
   minitest (~> 5.0)
   rake (~> 10.0)
   rest-client (~> 2.0.2)
+  webmock (~> 3.8.3)
 
 BUNDLED WITH
-   1.16.2
+   2.1.4
