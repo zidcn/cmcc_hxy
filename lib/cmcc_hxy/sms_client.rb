@@ -36,7 +36,7 @@ class CmccHxy::SmsClient
       }.to_json
     }
 
-    CmccHxy::RestClient.new(:post, url, params).request
+    CmccHxy::RestClient.post(url, params)
   end
 
   # 接口权限：系统接口，需要分配权限才能调用
@@ -69,7 +69,7 @@ class CmccHxy::SmsClient
       Data: {appid: @appid, smssn: smssn}.to_json
     }
 
-    CmccHxy::RestClient.new(:post, url, params).request
+    CmccHxy::RestClient.post(url, params)
   end
 
   private
