@@ -82,6 +82,6 @@ class CmccHxy::Client
   private
 
   def request(url, params)
-    CmccHxy::RestClient.new(:get, url, params).request
+    CmccHxy::RestClient.get(url, params)
   end
 end

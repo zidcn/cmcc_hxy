@@ -6,7 +6,8 @@ class SmsClientTest < Minitest::Test
   end
 
   def test_sys_send_sms
-    stub_request(:post, /SYS_SEND_SMS_BYMOBILE/)
+    stub_request(:post, /smsSend/)
+      .with(body: /SYS_SEND_SMS_BYMOBILE/)
       .to_return(status: 200, body: {"smssn"=>"smssn"}.to_json)
     result = @sms_client.sys_send_sms(sendmobile: "sendmobile",
                                       smscontent: "smscontent",
@@ -16,7 +17,8 @@ class SmsClientTest < Minitest::Test
   end
 
   def test_qry_sms_result
-    stub_request(:post, /QRY_SMS_RESULT/)
+    stub_request(:post, /smsSend/)
+      .with(body: /QRY_SMS_RESULT/)
       .to_return(status: 200, body: {"smssn"=>"smssn"}.to_json)
     result = @sms_client.qry_sms_result("smssn")
 
