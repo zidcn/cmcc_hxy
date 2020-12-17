@@ -1,13 +1,13 @@
 require 'cmcc_hxy/rest_client'
 require 'cmcc_hxy/config'
 
-class CmccHxy::Client
+class CmccHxy::SC::Client
   def initialize(token)
     @token = token
   end
 
   def host
-    @host ||= CmccHxy::Config.hxy_host
+    @host ||= CmccHxy::Config.hxy_host_sc
   end
 
   def get_users
