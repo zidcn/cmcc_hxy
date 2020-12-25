@@ -29,4 +29,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "webmock", "~> 3.8.3"
   spec.add_development_dependency "rest-client", "~> 2.0.2"
+  spec.add_development_dependency "activesupport", "~> 6.0.3"
 end

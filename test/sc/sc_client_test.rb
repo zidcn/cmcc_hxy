@@ -1,8 +1,8 @@
 require "test_helper"
 
-class ClientTest < Minitest::Test
+class ScClientTest < Minitest::Test
   def setup
-    @client = CmccHxy::Client.new("token")
+    @client = CmccHxy::SC::Client.new("token")
   end
 
   def test_get_users

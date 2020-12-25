@@ -2,7 +2,7 @@ require "test_helper"
 
 class SmsClientTest < Minitest::Test
   def setup
-    @sms_client = CmccHxy::SmsClient.new("appid")
+    @sms_client = CmccHxy::SC::SmsClient.new("appid")
   end
 
   def test_sys_send_sms

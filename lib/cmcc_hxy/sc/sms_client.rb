@@ -1,7 +1,7 @@
 require 'cmcc_hxy/rest_client'
 require 'cmcc_hxy/config'
 
-class CmccHxy::SmsClient
+class CmccHxy::SC::SmsClient
   def initialize(appid)
     @appid = appid
   end
@@ -75,6 +75,6 @@ class CmccHxy::SmsClient
   private
 
   def url
-    @url ||= "#{CmccHxy::Config.hxy_sms_host}/typtInterface/sms/smsSend"
+    @url ||= "#{CmccHxy::Config.hxy_sms_host_sc}/typtInterface/sms/smsSend"
   end
 end
